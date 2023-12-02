@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EPS200_SecureSQL1ModelStoreContainer" CdmEntityContainer="EPS200_SecureSQL1Entities">
+    <EntitySetMapping Name="CriBoschProfiles">
+      <EntityTypeMapping TypeName="EPS200_SecureSQL1Model.CriBoschProfiles">
+        <MappingFragment StoreEntitySet="CriBoschProfiles">
+          <ScalarProperty Name="Ansteuerprofil" ColumnName="Ansteuerprofil" />
+          <ScalarProperty Name="UB" ColumnName="UB" />
+          <ScalarProperty Name="UC" ColumnName="UC" />
+          <ScalarProperty Name="IBoost" ColumnName="IBoost" />
+          <ScalarProperty Name="IAnzug" ColumnName="IAnzug" />
+          <ScalarProperty Name="IAnzugTol" ColumnName="IAnzugTol" />
+          <ScalarProperty Name="IHalte" ColumnName="IHalte" />
+          <ScalarProperty Name="IHalteTol" ColumnName="IHalteTol" />
+          <ScalarProperty Name="LA" ColumnName="LA" />
+          <ScalarProperty Name="LH" ColumnName="LH" />
+          <ScalarProperty Name="TAnzug" ColumnName="TAnzug" />
+          <ScalarProperty Name="TMinHalte" ColumnName="TMinHalte" />
+          <ScalarProperty Name="Abschaltmode" ColumnName="Abschaltmode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CriKomponenten">
+      <EntityTypeMapping TypeName="EPS200_SecureSQL1Model.CriKomponenten">
+        <MappingFragment StoreEntitySet="CriKomponenten">
+          <ScalarProperty Name="CriID" ColumnName="CriID" />
+          <ScalarProperty Name="TypTeileNr" ColumnName="TypTeileNr" />
+          <ScalarProperty Name="Beschreibung" ColumnName="Beschreibung" />
+          <ScalarProperty Name="Hersteller" ColumnName="Hersteller" />
+          <ScalarProperty Name="IsBoschData" ColumnName="IsBoschData" />
+          <ScalarProperty Name="Ansteuerprofil" ColumnName="Ansteuerprofil" />
+          <ScalarProperty Name="Aktualisiert" ColumnName="Aktualisiert" />
+          <ScalarProperty Name="Erstellt" ColumnName="Erstellt" />
+          <ScalarProperty Name="UB" ColumnName="UB" />
+          <ScalarProperty Name="UC" ColumnName="UC" />
+          <ScalarProperty Name="IBoost" ColumnName="IBoost" />
+          <ScalarProperty Name="IAnzug" ColumnName="IAnzug" />
+          <ScalarProperty Name="IAnzugTol" ColumnName="IAnzugTol" />
+          <ScalarProperty Name="IHalte" ColumnName="IHalte" />
+          <ScalarProperty Name="IHalteTol" ColumnName="IHalteTol" />
+          <ScalarProperty Name="LA" ColumnName="LA" />
+          <ScalarProperty Name="LH" ColumnName="LH" />
+          <ScalarProperty Name="TAnzug" ColumnName="TAnzug" />
+          <ScalarProperty Name="TMinHalte" ColumnName="TMinHalte" />
+          <ScalarProperty Name="Abschaltmode" ColumnName="Abschaltmode" />
+          <ScalarProperty Name="Adapter" ColumnName="Adapter" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CriPruefschritte">
+      <EntityTypeMapping TypeName="EPS200_SecureSQL1Model.CriPruefschritte">
+        <MappingFragment StoreEntitySet="CriPruefschritte">
+          <ScalarProperty Name="CriPruefschrittID" ColumnName="CriPruefschrittID" />
+          <ScalarProperty Name="TypTeileNr" ColumnName="TypTeileNr" />
+          <ScalarProperty Name="PruefschrittNr" ColumnName="PruefschrittNr" />
+          <ScalarProperty Name="Pruefschrittname" ColumnName="Pruefschrittname" />
+          <ScalarProperty Name="Ansteuerdauer" ColumnName="Ansteuerdauer" />
+          <ScalarProperty Name="Arbeitsdruck" ColumnName="Arbeitsdruck" />
+          <ScalarProperty Name="Einspritzmenge" ColumnName="Einspritzmenge" />
+          <ScalarProperty Name="EinspritzmengeToleranz" ColumnName="EinspritzmengeToleranz" />
+          <ScalarProperty Name="Ruecklaufmenge" ColumnName="Ruecklaufmenge" />
+          <ScalarProperty Name="RuecklaufmengeToleranz" ColumnName="RuecklaufmengeToleranz" />
+          <ScalarProperty Name="Messzeit" ColumnName="Messzeit" />
+          <ScalarProperty Name="IsMengenmessung" ColumnName="IsMengenmessung" />
+          <ScalarProperty Name="EPM" ColumnName="EPM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DbInfo">
+      <EntityTypeMapping TypeName="EPS200_SecureSQL1Model.DbInfo">
+        <MappingFragment StoreEntitySet="DbInfo">
+          <ScalarProperty Name="InfoID" ColumnName="InfoID" />
+          <ScalarProperty Name="DbVersion" ColumnName="DbVersion" />
+          <ScalarProperty Name="TestDataVersion" ColumnName="TestDataVersion" />
+          <ScalarProperty Name="upsize_ts" ColumnName="upsize_ts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DhkKomponenten">
+      <EntityTypeMapping TypeName="EPS200_SecureSQL1Model.DhkKomponenten">
+        <MappingFragment StoreEntitySet="DhkKomponenten">
+          <ScalarProperty Name="DhkID" ColumnName="DhkID" />
+          <ScalarProperty Name="TypTeileNr" ColumnName="TypTeileNr" />
+          <ScalarProperty Name="Beschreibung" ColumnName="Beschreibung" />
+          <ScalarProperty Name="Hersteller" ColumnName="Hersteller" />
+          <ScalarProperty Name="IsBoschData" ColumnName="IsBoschData" />
+          <ScalarProperty Name="Aktualisiert" ColumnName="Aktualisiert" />
+          <ScalarProperty Name="Erstellt" ColumnName="Erstellt" />
+          <ScalarProperty Name="Oeffnungsdruck1_Min" ColumnName="Oeffnungsdruck1_Min" />
+          <ScalarProperty Name="Oeffnungsdruck1_Max" ColumnName="Oeffnungsdruck1_Max" />
+          <ScalarProperty Name="Oeffnungsdruck2_Testen" ColumnName="Oeffnungsdruck2_Testen" />
+          <ScalarProperty Name="Oeffnungsdruck2_Min" ColumnName="Oeffnungsdruck2_Min" />
+          <ScalarProperty Name="Oeffnungsdruck2_Max" ColumnName="Oeffnungsdruck2_Max" />
+          <ScalarProperty Name="Schnarrpruefung_Testen" ColumnName="Schnarrpruefung_Testen" />
+          <ScalarProperty Name="Kombinationsdichtheit_Testen" ColumnName="Kombinationsdichtheit_Testen" />
+          <ScalarProperty Name="Sitzdichtheit_Testen" ColumnName="Sitzdichtheit_Testen" />
+          <ScalarProperty Name="Strahlbild_Testen" ColumnName="Strahlbild_Testen" />
+          <ScalarProperty Name="Kombinationsdichtheit" ColumnName="Kombinationsdichtheit" />
+          <ScalarProperty Name="upsize_ts" ColumnName="upsize_ts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dtproperties">
+      <EntityTypeMapping TypeName="EPS200_SecureSQL1Model.dtproperties">
+        <MappingFragment StoreEntitySet="dtproperties">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="objectid" ColumnName="objectid" />
+          <ScalarProperty Name="property" ColumnName="property" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="uvalue" ColumnName="uvalue" />
+          <ScalarProperty Name="lvalue" ColumnName="lvalue" />
+          <ScalarProperty Name="version" ColumnName="version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KomponentenTypen">
+      <EntityTypeMapping TypeName="EPS200_SecureSQL1Model.KomponentenTypen">
+        <MappingFragment StoreEntitySet="KomponentenTypen">
+          <ScalarProperty Name="TypID" ColumnName="TypID" />
+          <ScalarProperty Name="Typ" ColumnName="Typ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kunden">
+      <EntityTypeMapping TypeName="EPS200_SecureSQL1Model.Kunden">
+        <MappingFragment StoreEntitySet="Kunden">
+          <ScalarProperty Name="KundenID" ColumnName="KundenID" />
+          <ScalarProperty Name="KundenNr" ColumnName="KundenNr" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Vorname" ColumnName="Vorname" />
+          <ScalarProperty Name="Strasse" ColumnName="Strasse" />
+          <ScalarProperty Name="Hausnummer" ColumnName="Hausnummer" />
+          <ScalarProperty Name="PLZ" ColumnName="PLZ" />
+          <ScalarProperty Name="Wohnort" ColumnName="Wohnort" />
+          <ScalarProperty Name="Land" ColumnName="Land" />
+          <ScalarProperty Name="Telefon1" ColumnName="Telefon1" />
+          <ScalarProperty Name="Telefon2" ColumnName="Telefon2" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Protokolle">
+      <EntityTypeMapping TypeName="EPS200_SecureSQL1Model.Protokolle">
+        <MappingFragment StoreEntitySet="Protokolle">
+          <ScalarProperty Name="ProtokollID" ColumnName="ProtokollID" />
+          <ScalarProperty Name="Pruefdatum" ColumnName="Pruefdatum" />
+          <ScalarProperty Name="KundenName" ColumnName="KundenName" />
+          <ScalarProperty Name="KundenNr" ColumnName="KundenNr" />
+          <ScalarProperty Name="KomponentenTyp" ColumnName="KomponentenTyp" />
+          <ScalarProperty Name="TypTeileNr" ColumnName="TypTeileNr" />
+          <ScalarProperty Name="Pruefer" ColumnName="Pruefer" />
+          <ScalarProperty Name="Ergebnisprotokoll" ColumnName="Ergebnisprotokoll" />
+          <ScalarProperty Name="upsize_ts" ColumnName="upsize_ts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

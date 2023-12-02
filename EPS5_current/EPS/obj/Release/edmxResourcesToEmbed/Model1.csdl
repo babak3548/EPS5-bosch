@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EPS200_SecureSQL1Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EPS200_SecureSQL1Entities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="CriBoschProfiles" EntityType="EPS200_SecureSQL1Model.CriBoschProfiles" />
+    <EntitySet Name="CriKomponenten" EntityType="EPS200_SecureSQL1Model.CriKomponenten" />
+    <EntitySet Name="CriPruefschritte" EntityType="EPS200_SecureSQL1Model.CriPruefschritte" />
+    <EntitySet Name="DbInfo" EntityType="EPS200_SecureSQL1Model.DbInfo" />
+    <EntitySet Name="DhkKomponenten" EntityType="EPS200_SecureSQL1Model.DhkKomponenten" />
+    <EntitySet Name="dtproperties" EntityType="EPS200_SecureSQL1Model.dtproperties" />
+    <EntitySet Name="KomponentenTypen" EntityType="EPS200_SecureSQL1Model.KomponentenTypen" />
+    <EntitySet Name="Kunden" EntityType="EPS200_SecureSQL1Model.Kunden" />
+    <EntitySet Name="Protokolle" EntityType="EPS200_SecureSQL1Model.Protokolle" />
+  </EntityContainer>
+  <EntityType Name="CriBoschProfiles">
+    <Key>
+      <PropertyRef Name="Ansteuerprofil" />
+    </Key>
+    <Property Name="Ansteuerprofil" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="UB" Type="Int16" Nullable="false" />
+    <Property Name="UC" Type="Int32" Nullable="false" />
+    <Property Name="IBoost" Type="Int16" Nullable="false" />
+    <Property Name="IAnzug" Type="Int16" Nullable="false" />
+    <Property Name="IAnzugTol" Type="Int16" Nullable="false" />
+    <Property Name="IHalte" Type="Int16" Nullable="false" />
+    <Property Name="IHalteTol" Type="Int16" Nullable="false" />
+    <Property Name="LA" Type="Int16" Nullable="false" />
+    <Property Name="LH" Type="Int16" Nullable="false" />
+    <Property Name="TAnzug" Type="Int16" Nullable="false" />
+    <Property Name="TMinHalte" Type="Int16" Nullable="false" />
+    <Property Name="Abschaltmode" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CriKomponenten">
+    <Key>
+      <PropertyRef Name="CriID" />
+    </Key>
+    <Property Name="CriID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="TypTeileNr" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Beschreibung" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Hersteller" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="IsBoschData" Type="Boolean" Nullable="false" />
+    <Property Name="Ansteuerprofil" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Aktualisiert" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Erstellt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UB" Type="Int16" Nullable="false" />
+    <Property Name="UC" Type="Int32" Nullable="false" />
+    <Property Name="IBoost" Type="Int16" Nullable="false" />
+    <Property Name="IAnzug" Type="Int16" Nullable="false" />
+    <Property Name="IAnzugTol" Type="Int16" Nullable="false" />
+    <Property Name="IHalte" Type="Int16" Nullable="false" />
+    <Property Name="IHalteTol" Type="Int16" Nullable="false" />
+    <Property Name="LA" Type="Int16" Nullable="false" />
+    <Property Name="LH" Type="Int16" Nullable="false" />
+    <Property Name="TAnzug" Type="Int16" Nullable="false" />
+    <Property Name="TMinHalte" Type="Int16" Nullable="false" />
+    <Property Name="Abschaltmode" Type="Int16" Nullable="false" />
+    <Property Name="Adapter" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="CriPruefschritte">
+    <Key>
+      <PropertyRef Name="CriPruefschrittID" />
+    </Key>
+    <Property Name="CriPruefschrittID" Type="Int32" Nullable="false" />
+    <Property Name="TypTeileNr" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="PruefschrittNr" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Pruefschrittname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Ansteuerdauer" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Arbeitsdruck" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Einspritzmenge" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="EinspritzmengeToleranz" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Ruecklaufmenge" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="RuecklaufmengeToleranz" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Messzeit" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="IsMengenmessung" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="EPM" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="DbInfo">
+    <Key>
+      <PropertyRef Name="InfoID" />
+    </Key>
+    <Property Name="InfoID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="DbVersion" Type="Single" Nullable="false" />
+    <Property Name="TestDataVersion" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="upsize_ts" Type="Binary" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="DhkKomponenten">
+    <Key>
+      <PropertyRef Name="DhkID" />
+    </Key>
+    <Property Name="DhkID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="TypTeileNr" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Beschreibung" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Hersteller" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="IsBoschData" Type="Boolean" Nullable="false" />
+    <Property Name="Aktualisiert" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Erstellt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Oeffnungsdruck1_Min" Type="Single" Nullable="false" />
+    <Property Name="Oeffnungsdruck1_Max" Type="Single" Nullable="false" />
+    <Property Name="Oeffnungsdruck2_Testen" Type="Boolean" Nullable="false" />
+    <Property Name="Oeffnungsdruck2_Min" Type="Single" />
+    <Property Name="Oeffnungsdruck2_Max" Type="Single" />
+    <Property Name="Schnarrpruefung_Testen" Type="Boolean" Nullable="false" />
+    <Property Name="Kombinationsdichtheit_Testen" Type="Boolean" Nullable="false" />
+    <Property Name="Sitzdichtheit_Testen" Type="Boolean" Nullable="false" />
+    <Property Name="Strahlbild_Testen" Type="Boolean" Nullable="false" />
+    <Property Name="Kombinationsdichtheit" Type="Single" />
+    <Property Name="upsize_ts" Type="Binary" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="dtproperties">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="property" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="objectid" Type="Int32" />
+    <Property Name="property" Type="String" Nullable="false" MaxLength="64" Unicode="false" FixedLength="false" />
+    <Property Name="value" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="uvalue" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="lvalue" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="version" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KomponentenTypen">
+    <Key>
+      <PropertyRef Name="TypID" />
+    </Key>
+    <Property Name="TypID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Typ" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Kunden">
+    <Key>
+      <PropertyRef Name="KundenID" />
+    </Key>
+    <Property Name="KundenID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="KundenNr" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Vorname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Strasse" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Hausnummer" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="PLZ" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="Wohnort" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Land" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Telefon1" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Telefon2" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Fax" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Protokolle">
+    <Key>
+      <PropertyRef Name="ProtokollID" />
+    </Key>
+    <Property Name="ProtokollID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Pruefdatum" Type="DateTime" Precision="3" />
+    <Property Name="KundenName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="KundenNr" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="KomponentenTyp" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="TypTeileNr" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Pruefer" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Ergebnisprotokoll" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="upsize_ts" Type="Binary" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+  </EntityType>
+</Schema>

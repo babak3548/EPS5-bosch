@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EPS200_SecureSQL1Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="EPS200_SecureSQL1ModelStoreContainer">
+    <EntitySet Name="CriBoschProfiles" EntityType="EPS200_SecureSQL1Model.Store.CriBoschProfiles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CriKomponenten" EntityType="EPS200_SecureSQL1Model.Store.CriKomponenten" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CriPruefschritte" EntityType="EPS200_SecureSQL1Model.Store.CriPruefschritte" store:Type="Tables" store:Schema="dbo" store:Name="CriPruefschritte">
+      <DefiningQuery>SELECT 
+      [CriPruefschritte].[CriPruefschrittID] AS [CriPruefschrittID], 
+      [CriPruefschritte].[TypTeileNr] AS [TypTeileNr], 
+      [CriPruefschritte].[PruefschrittNr] AS [PruefschrittNr], 
+      [CriPruefschritte].[Pruefschrittname] AS [Pruefschrittname], 
+      [CriPruefschritte].[Ansteuerdauer] AS [Ansteuerdauer], 
+      [CriPruefschritte].[Arbeitsdruck] AS [Arbeitsdruck], 
+      [CriPruefschritte].[Einspritzmenge] AS [Einspritzmenge], 
+      [CriPruefschritte].[EinspritzmengeToleranz] AS [EinspritzmengeToleranz], 
+      [CriPruefschritte].[Ruecklaufmenge] AS [Ruecklaufmenge], 
+      [CriPruefschritte].[RuecklaufmengeToleranz] AS [RuecklaufmengeToleranz], 
+      [CriPruefschritte].[Messzeit] AS [Messzeit], 
+      [CriPruefschritte].[IsMengenmessung] AS [IsMengenmessung], 
+      [CriPruefschritte].[EPM] AS [EPM]
+      FROM [dbo].[CriPruefschritte] AS [CriPruefschritte]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="DbInfo" EntityType="EPS200_SecureSQL1Model.Store.DbInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DhkKomponenten" EntityType="EPS200_SecureSQL1Model.Store.DhkKomponenten" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="dtproperties" EntityType="EPS200_SecureSQL1Model.Store.dtproperties" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="KomponentenTypen" EntityType="EPS200_SecureSQL1Model.Store.KomponentenTypen" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Kunden" EntityType="EPS200_SecureSQL1Model.Store.Kunden" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Protokolle" EntityType="EPS200_SecureSQL1Model.Store.Protokolle" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="CriBoschProfiles">
+    <Key>
+      <PropertyRef Name="Ansteuerprofil" />
+    </Key>
+    <Property Name="Ansteuerprofil" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="UB" Type="smallint" Nullable="false" />
+    <Property Name="UC" Type="int" Nullable="false" />
+    <Property Name="IBoost" Type="smallint" Nullable="false" />
+    <Property Name="IAnzug" Type="smallint" Nullable="false" />
+    <Property Name="IAnzugTol" Type="smallint" Nullable="false" />
+    <Property Name="IHalte" Type="smallint" Nullable="false" />
+    <Property Name="IHalteTol" Type="smallint" Nullable="false" />
+    <Property Name="LA" Type="smallint" Nullable="false" />
+    <Property Name="LH" Type="smallint" Nullable="false" />
+    <Property Name="TAnzug" Type="smallint" Nullable="false" />
+    <Property Name="TMinHalte" Type="smallint" Nullable="false" />
+    <Property Name="Abschaltmode" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CriKomponenten">
+    <Key>
+      <PropertyRef Name="CriID" />
+    </Key>
+    <Property Name="CriID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TypTeileNr" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Beschreibung" Type="nvarchar" MaxLength="50" />
+    <Property Name="Hersteller" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="IsBoschData" Type="bit" Nullable="false" />
+    <Property Name="Ansteuerprofil" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Aktualisiert" Type="datetime" Nullable="false" />
+    <Property Name="Erstellt" Type="datetime" Nullable="false" />
+    <Property Name="UB" Type="smallint" Nullable="false" />
+    <Property Name="UC" Type="int" Nullable="false" />
+    <Property Name="IBoost" Type="smallint" Nullable="false" />
+    <Property Name="IAnzug" Type="smallint" Nullable="false" />
+    <Property Name="IAnzugTol" Type="smallint" Nullable="false" />
+    <Property Name="IHalte" Type="smallint" Nullable="false" />
+    <Property Name="IHalteTol" Type="smallint" Nullable="false" />
+    <Property Name="LA" Type="smallint" Nullable="false" />
+    <Property Name="LH" Type="smallint" Nullable="false" />
+    <Property Name="TAnzug" Type="smallint" Nullable="false" />
+    <Property Name="TMinHalte" Type="smallint" Nullable="false" />
+    <Property Name="Abschaltmode" Type="smallint" Nullable="false" />
+    <Property Name="Adapter" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'EPS200_SecureSQL1.dbo.CriPruefschritte' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="CriPruefschritte">
+    <Key>
+      <PropertyRef Name="CriPruefschrittID" />
+    </Key>
+    <Property Name="CriPruefschrittID" Type="int" Nullable="false" />
+    <Property Name="TypTeileNr" Type="nvarchar" MaxLength="50" />
+    <Property Name="PruefschrittNr" Type="nvarchar" MaxLength="50" />
+    <Property Name="Pruefschrittname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ansteuerdauer" Type="nvarchar" MaxLength="50" />
+    <Property Name="Arbeitsdruck" Type="nvarchar" MaxLength="50" />
+    <Property Name="Einspritzmenge" Type="nvarchar" MaxLength="50" />
+    <Property Name="EinspritzmengeToleranz" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ruecklaufmenge" Type="nvarchar" MaxLength="50" />
+    <Property Name="RuecklaufmengeToleranz" Type="nvarchar" MaxLength="50" />
+    <Property Name="Messzeit" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsMengenmessung" Type="nvarchar" MaxLength="50" />
+    <Property Name="EPM" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DbInfo">
+    <Key>
+      <PropertyRef Name="InfoID" />
+    </Key>
+    <Property Name="InfoID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DbVersion" Type="real" Nullable="false" />
+    <Property Name="TestDataVersion" Type="nvarchar" MaxLength="50" />
+    <Property Name="upsize_ts" Type="timestamp" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="DhkKomponenten">
+    <Key>
+      <PropertyRef Name="DhkID" />
+    </Key>
+    <Property Name="DhkID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TypTeileNr" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Beschreibung" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Hersteller" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="IsBoschData" Type="bit" Nullable="false" />
+    <Property Name="Aktualisiert" Type="datetime" Nullable="false" />
+    <Property Name="Erstellt" Type="datetime" Nullable="false" />
+    <Property Name="Oeffnungsdruck1_Min" Type="real" Nullable="false" />
+    <Property Name="Oeffnungsdruck1_Max" Type="real" Nullable="false" />
+    <Property Name="Oeffnungsdruck2_Testen" Type="bit" Nullable="false" />
+    <Property Name="Oeffnungsdruck2_Min" Type="real" />
+    <Property Name="Oeffnungsdruck2_Max" Type="real" />
+    <Property Name="Schnarrpruefung_Testen" Type="bit" Nullable="false" />
+    <Property Name="Kombinationsdichtheit_Testen" Type="bit" Nullable="false" />
+    <Property Name="Sitzdichtheit_Testen" Type="bit" Nullable="false" />
+    <Property Name="Strahlbild_Testen" Type="bit" Nullable="false" />
+    <Property Name="Kombinationsdichtheit" Type="real" />
+    <Property Name="upsize_ts" Type="timestamp" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="dtproperties">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="property" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="objectid" Type="int" />
+    <Property Name="property" Type="varchar" Nullable="false" MaxLength="64" />
+    <Property Name="value" Type="varchar" MaxLength="255" />
+    <Property Name="uvalue" Type="nvarchar" MaxLength="255" />
+    <Property Name="lvalue" Type="image" />
+    <Property Name="version" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KomponentenTypen">
+    <Key>
+      <PropertyRef Name="TypID" />
+    </Key>
+    <Property Name="TypID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Typ" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Kunden">
+    <Key>
+      <PropertyRef Name="KundenID" />
+    </Key>
+    <Property Name="KundenID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="KundenNr" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Vorname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Strasse" Type="nvarchar" MaxLength="50" />
+    <Property Name="Hausnummer" Type="nvarchar" MaxLength="10" />
+    <Property Name="PLZ" Type="nvarchar" MaxLength="10" />
+    <Property Name="Wohnort" Type="nvarchar" MaxLength="50" />
+    <Property Name="Land" Type="nvarchar" MaxLength="50" />
+    <Property Name="Telefon1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Telefon2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Protokolle">
+    <Key>
+      <PropertyRef Name="ProtokollID" />
+    </Key>
+    <Property Name="ProtokollID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Pruefdatum" Type="datetime" />
+    <Property Name="KundenName" Type="nvarchar" MaxLength="50" />
+    <Property Name="KundenNr" Type="nvarchar" MaxLength="50" />
+    <Property Name="KomponentenTyp" Type="nvarchar" MaxLength="20" />
+    <Property Name="TypTeileNr" Type="nvarchar" MaxLength="50" />
+    <Property Name="Pruefer" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ergebnisprotokoll" Type="image" />
+    <Property Name="upsize_ts" Type="timestamp" StoreGeneratedPattern="Computed" />
+  </EntityType>
+</Schema>

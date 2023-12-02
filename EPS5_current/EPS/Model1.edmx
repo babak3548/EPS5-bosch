@@ -1,0 +1,528 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="EPS200_SecureSQL1Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="EPS200_SecureSQL1ModelStoreContainer">
+          <EntitySet Name="CriBoschProfiles" EntityType="EPS200_SecureSQL1Model.Store.CriBoschProfiles" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="CriKomponenten" EntityType="EPS200_SecureSQL1Model.Store.CriKomponenten" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="CriPruefschritte" EntityType="EPS200_SecureSQL1Model.Store.CriPruefschritte" store:Type="Tables" store:Schema="dbo" store:Name="CriPruefschritte" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+            <DefiningQuery>SELECT 
+      [CriPruefschritte].[CriPruefschrittID] AS [CriPruefschrittID], 
+      [CriPruefschritte].[TypTeileNr] AS [TypTeileNr], 
+      [CriPruefschritte].[PruefschrittNr] AS [PruefschrittNr], 
+      [CriPruefschritte].[Pruefschrittname] AS [Pruefschrittname], 
+      [CriPruefschritte].[Ansteuerdauer] AS [Ansteuerdauer], 
+      [CriPruefschritte].[Arbeitsdruck] AS [Arbeitsdruck], 
+      [CriPruefschritte].[Einspritzmenge] AS [Einspritzmenge], 
+      [CriPruefschritte].[EinspritzmengeToleranz] AS [EinspritzmengeToleranz], 
+      [CriPruefschritte].[Ruecklaufmenge] AS [Ruecklaufmenge], 
+      [CriPruefschritte].[RuecklaufmengeToleranz] AS [RuecklaufmengeToleranz], 
+      [CriPruefschritte].[Messzeit] AS [Messzeit], 
+      [CriPruefschritte].[IsMengenmessung] AS [IsMengenmessung], 
+      [CriPruefschritte].[EPM] AS [EPM]
+      FROM [dbo].[CriPruefschritte] AS [CriPruefschritte]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DbInfo" EntityType="EPS200_SecureSQL1Model.Store.DbInfo" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="DhkKomponenten" EntityType="EPS200_SecureSQL1Model.Store.DhkKomponenten" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="dtproperties" EntityType="EPS200_SecureSQL1Model.Store.dtproperties" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="KomponentenTypen" EntityType="EPS200_SecureSQL1Model.Store.KomponentenTypen" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Kunden" EntityType="EPS200_SecureSQL1Model.Store.Kunden" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="Protokolle" EntityType="EPS200_SecureSQL1Model.Store.Protokolle" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+        </EntityContainer>
+        <EntityType Name="CriBoschProfiles">
+          <Key>
+            <PropertyRef Name="Ansteuerprofil" />
+          </Key>
+          <Property Name="Ansteuerprofil" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UB" Type="smallint" Nullable="false" />
+          <Property Name="UC" Type="int" Nullable="false" />
+          <Property Name="IBoost" Type="smallint" Nullable="false" />
+          <Property Name="IAnzug" Type="smallint" Nullable="false" />
+          <Property Name="IAnzugTol" Type="smallint" Nullable="false" />
+          <Property Name="IHalte" Type="smallint" Nullable="false" />
+          <Property Name="IHalteTol" Type="smallint" Nullable="false" />
+          <Property Name="LA" Type="smallint" Nullable="false" />
+          <Property Name="LH" Type="smallint" Nullable="false" />
+          <Property Name="TAnzug" Type="smallint" Nullable="false" />
+          <Property Name="TMinHalte" Type="smallint" Nullable="false" />
+          <Property Name="Abschaltmode" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CriKomponenten">
+          <Key>
+            <PropertyRef Name="CriID" />
+          </Key>
+          <Property Name="CriID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TypTeileNr" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Beschreibung" Type="nvarchar" MaxLength="50" />
+          <Property Name="Hersteller" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsBoschData" Type="bit" Nullable="false" />
+          <Property Name="Ansteuerprofil" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Aktualisiert" Type="datetime" Nullable="false" />
+          <Property Name="Erstellt" Type="datetime" Nullable="false" />
+          <Property Name="UB" Type="smallint" Nullable="false" />
+          <Property Name="UC" Type="int" Nullable="false" />
+          <Property Name="IBoost" Type="smallint" Nullable="false" />
+          <Property Name="IAnzug" Type="smallint" Nullable="false" />
+          <Property Name="IAnzugTol" Type="smallint" Nullable="false" />
+          <Property Name="IHalte" Type="smallint" Nullable="false" />
+          <Property Name="IHalteTol" Type="smallint" Nullable="false" />
+          <Property Name="LA" Type="smallint" Nullable="false" />
+          <Property Name="LH" Type="smallint" Nullable="false" />
+          <Property Name="TAnzug" Type="smallint" Nullable="false" />
+          <Property Name="TMinHalte" Type="smallint" Nullable="false" />
+          <Property Name="Abschaltmode" Type="smallint" Nullable="false" />
+          <Property Name="Adapter" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'EPS200_SecureSQL1.dbo.CriPruefschritte' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="CriPruefschritte">
+          <Key>
+            <PropertyRef Name="CriPruefschrittID" />
+          </Key>
+          <Property Name="CriPruefschrittID" Type="int" Nullable="false" />
+          <Property Name="TypTeileNr" Type="nvarchar" MaxLength="50" />
+          <Property Name="PruefschrittNr" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pruefschrittname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ansteuerdauer" Type="nvarchar" MaxLength="50" />
+          <Property Name="Arbeitsdruck" Type="nvarchar" MaxLength="50" />
+          <Property Name="Einspritzmenge" Type="nvarchar" MaxLength="50" />
+          <Property Name="EinspritzmengeToleranz" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ruecklaufmenge" Type="nvarchar" MaxLength="50" />
+          <Property Name="RuecklaufmengeToleranz" Type="nvarchar" MaxLength="50" />
+          <Property Name="Messzeit" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsMengenmessung" Type="nvarchar" MaxLength="50" />
+          <Property Name="EPM" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DbInfo">
+          <Key>
+            <PropertyRef Name="InfoID" />
+          </Key>
+          <Property Name="InfoID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DbVersion" Type="real" Nullable="false" />
+          <Property Name="TestDataVersion" Type="nvarchar" MaxLength="50" />
+          <Property Name="upsize_ts" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="DhkKomponenten">
+          <Key>
+            <PropertyRef Name="DhkID" />
+          </Key>
+          <Property Name="DhkID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TypTeileNr" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Beschreibung" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Hersteller" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsBoschData" Type="bit" Nullable="false" />
+          <Property Name="Aktualisiert" Type="datetime" Nullable="false" />
+          <Property Name="Erstellt" Type="datetime" Nullable="false" />
+          <Property Name="Oeffnungsdruck1_Min" Type="real" Nullable="false" />
+          <Property Name="Oeffnungsdruck1_Max" Type="real" Nullable="false" />
+          <Property Name="Oeffnungsdruck2_Testen" Type="bit" Nullable="false" />
+          <Property Name="Oeffnungsdruck2_Min" Type="real" />
+          <Property Name="Oeffnungsdruck2_Max" Type="real" />
+          <Property Name="Schnarrpruefung_Testen" Type="bit" Nullable="false" />
+          <Property Name="Kombinationsdichtheit_Testen" Type="bit" Nullable="false" />
+          <Property Name="Sitzdichtheit_Testen" Type="bit" Nullable="false" />
+          <Property Name="Strahlbild_Testen" Type="bit" Nullable="false" />
+          <Property Name="Kombinationsdichtheit" Type="real" />
+          <Property Name="upsize_ts" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="dtproperties">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="property" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="objectid" Type="int" />
+          <Property Name="property" Type="varchar" Nullable="false" MaxLength="64" />
+          <Property Name="value" Type="varchar" MaxLength="255" />
+          <Property Name="uvalue" Type="nvarchar" MaxLength="255" />
+          <Property Name="lvalue" Type="image" />
+          <Property Name="version" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KomponentenTypen">
+          <Key>
+            <PropertyRef Name="TypID" />
+          </Key>
+          <Property Name="TypID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Typ" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Kunden">
+          <Key>
+            <PropertyRef Name="KundenID" />
+          </Key>
+          <Property Name="KundenID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="KundenNr" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Vorname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Strasse" Type="nvarchar" MaxLength="50" />
+          <Property Name="Hausnummer" Type="nvarchar" MaxLength="10" />
+          <Property Name="PLZ" Type="nvarchar" MaxLength="10" />
+          <Property Name="Wohnort" Type="nvarchar" MaxLength="50" />
+          <Property Name="Land" Type="nvarchar" MaxLength="50" />
+          <Property Name="Telefon1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Telefon2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Protokolle">
+          <Key>
+            <PropertyRef Name="ProtokollID" />
+          </Key>
+          <Property Name="ProtokollID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Pruefdatum" Type="datetime" />
+          <Property Name="KundenName" Type="nvarchar" MaxLength="50" />
+          <Property Name="KundenNr" Type="nvarchar" MaxLength="50" />
+          <Property Name="KomponentenTyp" Type="nvarchar" MaxLength="20" />
+          <Property Name="TypTeileNr" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pruefer" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ergebnisprotokoll" Type="image" />
+          <Property Name="upsize_ts" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EPS200_SecureSQL1Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="EPS200_SecureSQL1Entities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="CriBoschProfiles" EntityType="EPS200_SecureSQL1Model.CriBoschProfiles" />
+          <EntitySet Name="CriKomponenten" EntityType="EPS200_SecureSQL1Model.CriKomponenten" />
+          <EntitySet Name="CriPruefschritte" EntityType="EPS200_SecureSQL1Model.CriPruefschritte" />
+          <EntitySet Name="DbInfo" EntityType="EPS200_SecureSQL1Model.DbInfo" />
+          <EntitySet Name="DhkKomponenten" EntityType="EPS200_SecureSQL1Model.DhkKomponenten" />
+          <EntitySet Name="dtproperties" EntityType="EPS200_SecureSQL1Model.dtproperties" />
+          <EntitySet Name="KomponentenTypen" EntityType="EPS200_SecureSQL1Model.KomponentenTypen" />
+          <EntitySet Name="Kunden" EntityType="EPS200_SecureSQL1Model.Kunden" />
+          <EntitySet Name="Protokolle" EntityType="EPS200_SecureSQL1Model.Protokolle" />
+        </EntityContainer>
+        <EntityType Name="CriBoschProfiles">
+          <Key>
+            <PropertyRef Name="Ansteuerprofil" />
+          </Key>
+          <Property Name="Ansteuerprofil" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UB" Type="Int16" Nullable="false" />
+          <Property Name="UC" Type="Int32" Nullable="false" />
+          <Property Name="IBoost" Type="Int16" Nullable="false" />
+          <Property Name="IAnzug" Type="Int16" Nullable="false" />
+          <Property Name="IAnzugTol" Type="Int16" Nullable="false" />
+          <Property Name="IHalte" Type="Int16" Nullable="false" />
+          <Property Name="IHalteTol" Type="Int16" Nullable="false" />
+          <Property Name="LA" Type="Int16" Nullable="false" />
+          <Property Name="LH" Type="Int16" Nullable="false" />
+          <Property Name="TAnzug" Type="Int16" Nullable="false" />
+          <Property Name="TMinHalte" Type="Int16" Nullable="false" />
+          <Property Name="Abschaltmode" Type="Int16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CriKomponenten">
+          <Key>
+            <PropertyRef Name="CriID" />
+          </Key>
+          <Property Name="CriID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="TypTeileNr" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Beschreibung" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Hersteller" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsBoschData" Type="Boolean" Nullable="false" />
+          <Property Name="Ansteuerprofil" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Aktualisiert" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Erstellt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UB" Type="Int16" Nullable="false" />
+          <Property Name="UC" Type="Int32" Nullable="false" />
+          <Property Name="IBoost" Type="Int16" Nullable="false" />
+          <Property Name="IAnzug" Type="Int16" Nullable="false" />
+          <Property Name="IAnzugTol" Type="Int16" Nullable="false" />
+          <Property Name="IHalte" Type="Int16" Nullable="false" />
+          <Property Name="IHalteTol" Type="Int16" Nullable="false" />
+          <Property Name="LA" Type="Int16" Nullable="false" />
+          <Property Name="LH" Type="Int16" Nullable="false" />
+          <Property Name="TAnzug" Type="Int16" Nullable="false" />
+          <Property Name="TMinHalte" Type="Int16" Nullable="false" />
+          <Property Name="Abschaltmode" Type="Int16" Nullable="false" />
+          <Property Name="Adapter" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="CriPruefschritte">
+          <Key>
+            <PropertyRef Name="CriPruefschrittID" />
+          </Key>
+          <Property Name="CriPruefschrittID" Type="Int32" Nullable="false" />
+          <Property Name="TypTeileNr" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="PruefschrittNr" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Pruefschrittname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Ansteuerdauer" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Arbeitsdruck" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Einspritzmenge" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="EinspritzmengeToleranz" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Ruecklaufmenge" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="RuecklaufmengeToleranz" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Messzeit" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsMengenmessung" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="EPM" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="DbInfo">
+          <Key>
+            <PropertyRef Name="InfoID" />
+          </Key>
+          <Property Name="InfoID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="DbVersion" Type="Single" Nullable="false" />
+          <Property Name="TestDataVersion" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="upsize_ts" Type="Binary" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="DhkKomponenten">
+          <Key>
+            <PropertyRef Name="DhkID" />
+          </Key>
+          <Property Name="DhkID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="TypTeileNr" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Beschreibung" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Hersteller" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsBoschData" Type="Boolean" Nullable="false" />
+          <Property Name="Aktualisiert" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Erstellt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Oeffnungsdruck1_Min" Type="Single" Nullable="false" />
+          <Property Name="Oeffnungsdruck1_Max" Type="Single" Nullable="false" />
+          <Property Name="Oeffnungsdruck2_Testen" Type="Boolean" Nullable="false" />
+          <Property Name="Oeffnungsdruck2_Min" Type="Single" />
+          <Property Name="Oeffnungsdruck2_Max" Type="Single" />
+          <Property Name="Schnarrpruefung_Testen" Type="Boolean" Nullable="false" />
+          <Property Name="Kombinationsdichtheit_Testen" Type="Boolean" Nullable="false" />
+          <Property Name="Sitzdichtheit_Testen" Type="Boolean" Nullable="false" />
+          <Property Name="Strahlbild_Testen" Type="Boolean" Nullable="false" />
+          <Property Name="Kombinationsdichtheit" Type="Single" />
+          <Property Name="upsize_ts" Type="Binary" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="dtproperties">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="property" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="objectid" Type="Int32" />
+          <Property Name="property" Type="String" Nullable="false" MaxLength="64" Unicode="false" FixedLength="false" />
+          <Property Name="value" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="uvalue" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="lvalue" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="version" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KomponentenTypen">
+          <Key>
+            <PropertyRef Name="TypID" />
+          </Key>
+          <Property Name="TypID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Typ" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Kunden">
+          <Key>
+            <PropertyRef Name="KundenID" />
+          </Key>
+          <Property Name="KundenID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="KundenNr" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Vorname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Strasse" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Hausnummer" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="PLZ" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Wohnort" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Land" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Telefon1" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Telefon2" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Fax" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Protokolle">
+          <Key>
+            <PropertyRef Name="ProtokollID" />
+          </Key>
+          <Property Name="ProtokollID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Pruefdatum" Type="DateTime" Precision="3" />
+          <Property Name="KundenName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="KundenNr" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="KomponentenTyp" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="TypTeileNr" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Pruefer" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Ergebnisprotokoll" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="upsize_ts" Type="Binary" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EPS200_SecureSQL1ModelStoreContainer" CdmEntityContainer="EPS200_SecureSQL1Entities">
+          <EntitySetMapping Name="CriBoschProfiles">
+            <EntityTypeMapping TypeName="EPS200_SecureSQL1Model.CriBoschProfiles">
+              <MappingFragment StoreEntitySet="CriBoschProfiles">
+                <ScalarProperty Name="Ansteuerprofil" ColumnName="Ansteuerprofil" />
+                <ScalarProperty Name="UB" ColumnName="UB" />
+                <ScalarProperty Name="UC" ColumnName="UC" />
+                <ScalarProperty Name="IBoost" ColumnName="IBoost" />
+                <ScalarProperty Name="IAnzug" ColumnName="IAnzug" />
+                <ScalarProperty Name="IAnzugTol" ColumnName="IAnzugTol" />
+                <ScalarProperty Name="IHalte" ColumnName="IHalte" />
+                <ScalarProperty Name="IHalteTol" ColumnName="IHalteTol" />
+                <ScalarProperty Name="LA" ColumnName="LA" />
+                <ScalarProperty Name="LH" ColumnName="LH" />
+                <ScalarProperty Name="TAnzug" ColumnName="TAnzug" />
+                <ScalarProperty Name="TMinHalte" ColumnName="TMinHalte" />
+                <ScalarProperty Name="Abschaltmode" ColumnName="Abschaltmode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CriKomponenten">
+            <EntityTypeMapping TypeName="EPS200_SecureSQL1Model.CriKomponenten">
+              <MappingFragment StoreEntitySet="CriKomponenten">
+                <ScalarProperty Name="CriID" ColumnName="CriID" />
+                <ScalarProperty Name="TypTeileNr" ColumnName="TypTeileNr" />
+                <ScalarProperty Name="Beschreibung" ColumnName="Beschreibung" />
+                <ScalarProperty Name="Hersteller" ColumnName="Hersteller" />
+                <ScalarProperty Name="IsBoschData" ColumnName="IsBoschData" />
+                <ScalarProperty Name="Ansteuerprofil" ColumnName="Ansteuerprofil" />
+                <ScalarProperty Name="Aktualisiert" ColumnName="Aktualisiert" />
+                <ScalarProperty Name="Erstellt" ColumnName="Erstellt" />
+                <ScalarProperty Name="UB" ColumnName="UB" />
+                <ScalarProperty Name="UC" ColumnName="UC" />
+                <ScalarProperty Name="IBoost" ColumnName="IBoost" />
+                <ScalarProperty Name="IAnzug" ColumnName="IAnzug" />
+                <ScalarProperty Name="IAnzugTol" ColumnName="IAnzugTol" />
+                <ScalarProperty Name="IHalte" ColumnName="IHalte" />
+                <ScalarProperty Name="IHalteTol" ColumnName="IHalteTol" />
+                <ScalarProperty Name="LA" ColumnName="LA" />
+                <ScalarProperty Name="LH" ColumnName="LH" />
+                <ScalarProperty Name="TAnzug" ColumnName="TAnzug" />
+                <ScalarProperty Name="TMinHalte" ColumnName="TMinHalte" />
+                <ScalarProperty Name="Abschaltmode" ColumnName="Abschaltmode" />
+                <ScalarProperty Name="Adapter" ColumnName="Adapter" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CriPruefschritte">
+            <EntityTypeMapping TypeName="EPS200_SecureSQL1Model.CriPruefschritte">
+              <MappingFragment StoreEntitySet="CriPruefschritte">
+                <ScalarProperty Name="CriPruefschrittID" ColumnName="CriPruefschrittID" />
+                <ScalarProperty Name="TypTeileNr" ColumnName="TypTeileNr" />
+                <ScalarProperty Name="PruefschrittNr" ColumnName="PruefschrittNr" />
+                <ScalarProperty Name="Pruefschrittname" ColumnName="Pruefschrittname" />
+                <ScalarProperty Name="Ansteuerdauer" ColumnName="Ansteuerdauer" />
+                <ScalarProperty Name="Arbeitsdruck" ColumnName="Arbeitsdruck" />
+                <ScalarProperty Name="Einspritzmenge" ColumnName="Einspritzmenge" />
+                <ScalarProperty Name="EinspritzmengeToleranz" ColumnName="EinspritzmengeToleranz" />
+                <ScalarProperty Name="Ruecklaufmenge" ColumnName="Ruecklaufmenge" />
+                <ScalarProperty Name="RuecklaufmengeToleranz" ColumnName="RuecklaufmengeToleranz" />
+                <ScalarProperty Name="Messzeit" ColumnName="Messzeit" />
+                <ScalarProperty Name="IsMengenmessung" ColumnName="IsMengenmessung" />
+                <ScalarProperty Name="EPM" ColumnName="EPM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DbInfo">
+            <EntityTypeMapping TypeName="EPS200_SecureSQL1Model.DbInfo">
+              <MappingFragment StoreEntitySet="DbInfo">
+                <ScalarProperty Name="InfoID" ColumnName="InfoID" />
+                <ScalarProperty Name="DbVersion" ColumnName="DbVersion" />
+                <ScalarProperty Name="TestDataVersion" ColumnName="TestDataVersion" />
+                <ScalarProperty Name="upsize_ts" ColumnName="upsize_ts" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DhkKomponenten">
+            <EntityTypeMapping TypeName="EPS200_SecureSQL1Model.DhkKomponenten">
+              <MappingFragment StoreEntitySet="DhkKomponenten">
+                <ScalarProperty Name="DhkID" ColumnName="DhkID" />
+                <ScalarProperty Name="TypTeileNr" ColumnName="TypTeileNr" />
+                <ScalarProperty Name="Beschreibung" ColumnName="Beschreibung" />
+                <ScalarProperty Name="Hersteller" ColumnName="Hersteller" />
+                <ScalarProperty Name="IsBoschData" ColumnName="IsBoschData" />
+                <ScalarProperty Name="Aktualisiert" ColumnName="Aktualisiert" />
+                <ScalarProperty Name="Erstellt" ColumnName="Erstellt" />
+                <ScalarProperty Name="Oeffnungsdruck1_Min" ColumnName="Oeffnungsdruck1_Min" />
+                <ScalarProperty Name="Oeffnungsdruck1_Max" ColumnName="Oeffnungsdruck1_Max" />
+                <ScalarProperty Name="Oeffnungsdruck2_Testen" ColumnName="Oeffnungsdruck2_Testen" />
+                <ScalarProperty Name="Oeffnungsdruck2_Min" ColumnName="Oeffnungsdruck2_Min" />
+                <ScalarProperty Name="Oeffnungsdruck2_Max" ColumnName="Oeffnungsdruck2_Max" />
+                <ScalarProperty Name="Schnarrpruefung_Testen" ColumnName="Schnarrpruefung_Testen" />
+                <ScalarProperty Name="Kombinationsdichtheit_Testen" ColumnName="Kombinationsdichtheit_Testen" />
+                <ScalarProperty Name="Sitzdichtheit_Testen" ColumnName="Sitzdichtheit_Testen" />
+                <ScalarProperty Name="Strahlbild_Testen" ColumnName="Strahlbild_Testen" />
+                <ScalarProperty Name="Kombinationsdichtheit" ColumnName="Kombinationsdichtheit" />
+                <ScalarProperty Name="upsize_ts" ColumnName="upsize_ts" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dtproperties">
+            <EntityTypeMapping TypeName="EPS200_SecureSQL1Model.dtproperties">
+              <MappingFragment StoreEntitySet="dtproperties">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="objectid" ColumnName="objectid" />
+                <ScalarProperty Name="property" ColumnName="property" />
+                <ScalarProperty Name="value" ColumnName="value" />
+                <ScalarProperty Name="uvalue" ColumnName="uvalue" />
+                <ScalarProperty Name="lvalue" ColumnName="lvalue" />
+                <ScalarProperty Name="version" ColumnName="version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KomponentenTypen">
+            <EntityTypeMapping TypeName="EPS200_SecureSQL1Model.KomponentenTypen">
+              <MappingFragment StoreEntitySet="KomponentenTypen">
+                <ScalarProperty Name="TypID" ColumnName="TypID" />
+                <ScalarProperty Name="Typ" ColumnName="Typ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kunden">
+            <EntityTypeMapping TypeName="EPS200_SecureSQL1Model.Kunden">
+              <MappingFragment StoreEntitySet="Kunden">
+                <ScalarProperty Name="KundenID" ColumnName="KundenID" />
+                <ScalarProperty Name="KundenNr" ColumnName="KundenNr" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Vorname" ColumnName="Vorname" />
+                <ScalarProperty Name="Strasse" ColumnName="Strasse" />
+                <ScalarProperty Name="Hausnummer" ColumnName="Hausnummer" />
+                <ScalarProperty Name="PLZ" ColumnName="PLZ" />
+                <ScalarProperty Name="Wohnort" ColumnName="Wohnort" />
+                <ScalarProperty Name="Land" ColumnName="Land" />
+                <ScalarProperty Name="Telefon1" ColumnName="Telefon1" />
+                <ScalarProperty Name="Telefon2" ColumnName="Telefon2" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Protokolle">
+            <EntityTypeMapping TypeName="EPS200_SecureSQL1Model.Protokolle">
+              <MappingFragment StoreEntitySet="Protokolle">
+                <ScalarProperty Name="ProtokollID" ColumnName="ProtokollID" />
+                <ScalarProperty Name="Pruefdatum" ColumnName="Pruefdatum" />
+                <ScalarProperty Name="KundenName" ColumnName="KundenName" />
+                <ScalarProperty Name="KundenNr" ColumnName="KundenNr" />
+                <ScalarProperty Name="KomponentenTyp" ColumnName="KomponentenTyp" />
+                <ScalarProperty Name="TypTeileNr" ColumnName="TypTeileNr" />
+                <ScalarProperty Name="Pruefer" ColumnName="Pruefer" />
+                <ScalarProperty Name="Ergebnisprotokoll" ColumnName="Ergebnisprotokoll" />
+                <ScalarProperty Name="upsize_ts" ColumnName="upsize_ts" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams />
+  </Designer>
+</edmx:Edmx>

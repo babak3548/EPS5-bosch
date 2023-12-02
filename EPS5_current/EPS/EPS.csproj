@@ -1,0 +1,462 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{667A2683-14A9-4C68-8B35-1362A65356BC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EPS</RootNamespace>
+    <AssemblyName>EPS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AnarSoft.Utility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\anarsoft\ShoppingCenters\ServiceLayer\bin\Debug\AnarSoft.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\Refrence\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\VBPowerPacks\v10.0\Microsoft.VisualBasic.PowerPacks.Vs.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Deployment">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="VerticalProgressBar, Version=1.0.5449.27852, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\VerticalProgressBar.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="aba.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="aba.Designer.cs">
+      <DependentUpon>aba.cs</DependentUpon>
+    </Compile>
+    <Compile Include="aboutEPS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="aboutEPS.Designer.cs">
+      <DependentUpon>aboutEPS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Copy of UCCommonRailInjector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Copy of UCCommonRailInjector.Designer.cs">
+      <DependentUpon>Copy of UCCommonRailInjector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreatePDF.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCustomer.Designer.cs">
+      <DependentUpon>FrmCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetting.Designer.cs">
+      <DependentUpon>frmSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResultTest.cs" />
+    <Compile Include="Setting.cs" />
+    <Compile Include="ucLine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucLine.Designer.cs">
+      <DependentUpon>ucLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCTestEPS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCTestEPS.Designer.cs">
+      <DependentUpon>UCTestEPS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CriBoschProfiles.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CriKomponenten.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CriPruefschritte.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbInfo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DhkKomponenten.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtproperties.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Enums.cs" />
+    <Compile Include="ExtentionMethod.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KomponentenTypen.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Kunden.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Protokolle.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UC EPS 200 Load component.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC EPS 200 Load component.Designer.cs">
+      <DependentUpon>UC EPS 200 Load component.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCCommonRailInjector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCCommonRailInjector.Designer.cs">
+      <DependentUpon>UCCommonRailInjector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VerticalProgressBar.cs" />
+    <EmbeddedResource Include="aba.resx">
+      <DependentUpon>aba.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="aboutEPS.resx">
+      <DependentUpon>aboutEPS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Copy of UCCommonRailInjector.resx">
+      <DependentUpon>Copy of UCCommonRailInjector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCustomer.resx">
+      <DependentUpon>FrmCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetting.resx">
+      <DependentUpon>frmSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucLine.resx">
+      <DependentUpon>ucLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCTestEPS.resx">
+      <DependentUpon>UCTestEPS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UC EPS 200 Load component.resx">
+      <DependentUpon>UC EPS 200 Load component.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCCommonRailInjector.resx">
+      <DependentUpon>UCCommonRailInjector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\CriKomponenten.datasource" />
+    <None Include="Properties\DataSources\CriPruefschritte.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\!version.language.images.txt" />
+    <Content Include="Images\Abort.png" />
+    <Content Include="Images\ArrowDown.png" />
+    <Content Include="Images\ArrowLeft.png" />
+    <Content Include="Images\ArrowRight.png" />
+    <Content Include="Images\ArrowUp.png" />
+    <Content Include="Images\Autostore.png" />
+    <Content Include="Images\AwnAbort.png" />
+    <Content Include="Images\AwnFinish.png" />
+    <Content Include="Images\BAA.png" />
+    <Content Include="Images\Back.png" />
+    <Content Include="Images\Beep.png" />
+    <Content Include="Images\BOSCH.ico" />
+    <Content Include="Images\BoschLogo.png" />
+    <Content Include="Images\Cancel.png" />
+    <Content Include="Images\CH1-CH2.png" />
+    <Content Include="Images\Clock.png" />
+    <Content Include="Images\Compressed.png" />
+    <Content Include="Images\Configuration.png" />
+    <Content Include="Images\Continue.png" />
+    <Content Include="Images\CO_COcorr.png" />
+    <Content Include="Images\CriProfil.png" />
+    <Content Include="Images\Cursors.png" />
+    <Content Include="Images\CurveCaliper.png" />
+    <Content Include="Images\Customer.png" />
+    <Content Include="Images\DataBase.png" />
+    <Content Include="Images\Delete.png" />
+    <Content Include="Images\Demo.png" />
+    <Content Include="Images\DutyCycle.png" />
+    <Content Include="Images\EPS_Splashscreen.jpg" />
+    <Content Include="Images\EPS_Start.png" />
+    <Content Include="Images\EPS_Stop.png" />
+    <Content Include="Images\Error.png" />
+    <Content Include="Images\Esc.png" />
+    <Content Include="Images\Exhaust.png" />
+    <Content Include="Images\ExhaustOff.png" />
+    <Content Include="Images\FolderBrowser.png" />
+    <Content Include="Images\FullScreenOff.png" />
+    <Content Include="Images\FullScreenOn.png" />
+    <Content Include="Images\Globe.gif" />
+    <Content Include="Images\GlobeStatic.gif" />
+    <Content Include="Images\Help.png" />
+    <Content Include="Images\IgnitionCurves.png" />
+    <Content Include="Images\IgnitionPrimAll.png" />
+    <Content Include="Images\IgnitionPrimSingle.png" />
+    <Content Include="Images\Ignore.png" />
+    <Content Include="Images\ImpulseDuration.png" />
+    <Content Include="Images\Information.png" />
+    <Content Include="Images\Keyboard.png" />
+    <Content Include="Images\Lecktest.png" />
+    <Content Include="Images\LEDblue.png" />
+    <Content Include="Images\LedBlueOff.png" />
+    <Content Include="Images\LedBlueOn.png" />
+    <Content Include="Images\LEDgray.png" />
+    <Content Include="Images\LEDgreen.png" />
+    <Content Include="Images\LedGreenOff.png" />
+    <Content Include="Images\LedGreenOn.png" />
+    <Content Include="Images\LEDorange.png" />
+    <Content Include="Images\LEDred.png" />
+    <Content Include="Images\LedRedOff.png" />
+    <Content Include="Images\LedRedOn.png" />
+    <Content Include="Images\LedWhiteOff.png" />
+    <Content Include="Images\LedWhiteOn.png" />
+    <Content Include="Images\LedYellowOff.png" />
+    <Content Include="Images\LedYellowOn.png" />
+    <Content Include="Images\Lightning.png" />
+    <Content Include="Images\Load.png" />
+    <Content Include="Images\LoadInverted.png" />
+    <Content Include="Images\Lupe.png" />
+    <Content Include="Images\ManualHardware.png" />
+    <Content Include="Images\ManualSoftware.png" />
+    <Content Include="Images\MeasurementColumn.png" />
+    <Content Include="Images\MeasurementDone.png" />
+    <Content Include="Images\Memo.png" />
+    <Content Include="Images\MinMax.png" />
+    <Content Include="Images\Multimeter.png" />
+    <Content Include="Images\New.png" />
+    <Content Include="Images\NFenster.png" />
+    <Content Include="Images\NFensterOff.png" />
+    <Content Include="Images\NFensterOn.png" />
+    <Content Include="Images\No.png" />
+    <Content Include="Images\NoDemo.png" />
+    <Content Include="Images\NotTested.png" />
+    <Content Include="Images\Ohm.png" />
+    <Content Include="Images\OK.png" />
+    <Content Include="Images\ParadeView.png" />
+    <Content Include="Images\Print.png" />
+    <Content Include="Images\Question.png" />
+    <Content Include="Images\RasterView.png" />
+    <Content Include="Images\Reconnect.png" />
+    <Content Include="Images\Reference.png" />
+    <Content Include="Images\Repeat.png" />
+    <Content Include="Images\RepeatActiveZK.png" />
+    <Content Include="Images\Reset.png" />
+    <Content Include="Images\ResultIO.png" />
+    <Content Include="Images\Retry.png" />
+    <Content Include="Images\RollReferenceColumn.png" />
+    <Content Include="Images\RPMSource_Battery.png" />
+    <Content Include="Images\RPMSource_Disor.png" />
+    <Content Include="Images\RPMSource_None.png" />
+    <Content Include="Images\RPMSource_Primary.png" />
+    <Content Include="Images\RPMSource_Secondary.png" />
+    <Content Include="Images\RPMSource_Starter.png" />
+    <Content Include="Images\RPMSource_TriggerClamp.png" />
+    <Content Include="Images\SafetyAdvice.png" />
+    <Content Include="Images\Save.png" />
+    <Content Include="Images\SaveInverted.png" />
+    <Content Include="Images\SaveLoad.png" />
+    <Content Include="Images\Schliesswinkel.png" />
+    <Content Include="Images\Screen.png" />
+    <Content Include="Images\Search.png" />
+    <Content Include="Images\Search_Ignition_Voltage.png" />
+    <Content Include="Images\Search_Spark_Duration.png" />
+    <Content Include="Images\Search_Spark_Voltage.png" />
+    <Content Include="Images\SelectAll.png" />
+    <Content Include="Images\SelectNone.png" />
+    <Content Include="Images\SetX.png" />
+    <Content Include="Images\SetY.png" />
+    <Content Include="Images\SignalConfiguration.png" />
+    <Content Include="Images\SignalSelect.png" />
+    <Content Include="Images\SignalSettings.png" />
+    <Content Include="Images\SingleShot.png" />
+    <Content Include="Images\Spark-Blitz.png" />
+    <Content Include="Images\Stop.png" />
+    <Content Include="Images\Store.png" />
+    <Content Include="Images\TankTemp.PNG" />
+    <Content Include="Images\TimerStart.png" />
+    <Content Include="Images\TimerStop.png" />
+    <Content Include="Images\Toggle.png" />
+    <Content Include="Images\ToggleCh1.png" />
+    <Content Include="Images\ToggleCh1Ch2.png" />
+    <Content Include="Images\ToggleCh2.png" />
+    <Content Include="Images\TrafficLightsGreen.png" />
+    <Content Include="Images\TrafficLightsRed.png" />
+    <Content Include="Images\Trash.png" />
+    <Content Include="Images\Uncompressed.png" />
+    <Content Include="Images\UriDurch.png" />
+    <Content Include="Images\UriUntbr.png" />
+    <Content Include="Images\Volt.png" />
+    <Content Include="Images\Warning.png" />
+    <Content Include="Images\Yes.png" />
+    <Content Include="Images\ZeroAdjustment.PNG" />
+    <Content Include="Images\Zuendkreis.png" />
+    <Content Include="Images\Zylinderzahl.png" />
+    <None Include="Resources\Back.png" />
+    <None Include="Resources\ArrowUp.png" />
+    <None Include="Resources\ArrowDown.png" />
+    <None Include="Resources\Continue.png" />
+    <None Include="Resources\EPS_Stop.png" />
+    <None Include="Resources\EPS_Start.png" />
+    <None Include="Resources\Untitled-2.jpg" />
+    <None Include="Resources\Untitled-1.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
